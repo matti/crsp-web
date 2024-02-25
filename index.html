@@ -1,62 +1,107 @@
+<style>
+body {
+  font-size: 3em;
+  font-family: monospace;
+}
+
+fieldset {
+  border: 3px solid black;
+}
+
+fieldset + fieldset {
+  margin-top: 1em;
+}
+pre#player {
+  font-size: 0.8em;
+}
+
+div#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div#playa {
+  display: flex;
+  justify-content: right;
+}
+
+@supports (-webkit-touch-callout: none) {
+  div#header {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  body {
+    max-width: 1400px;
+  }
+  div#header {
+  }
+}
+</style>
+
+<script src="js/asciimorph.min.js"></script>
+
+<div id="header">
+
+  <div id="header__logo">
 <pre>
-█▀▀ █▀█ █ █▀ █▀█  javascript & css free
-█▄▄ █▀▄ ▄ ▄█ █▀▀             since 2022
+█▀▀ █▀█ █ █▀ █▀█
+█▄▄ █▀▄ ▄ ▄█ █▀▀
 </pre>
+  </div>
 
-<font size=7><b>
-<marquee direction="right"><marquee direction="down" scrollamount=20>
+  <div id="header__text">
 <pre>
-█▀▀ █▀█ █ █▀ █▀█
-█▄▄ █▀▄ ▄ ▄█ █▀▀
-<pre>
-</marquee></marquee>
-</b></font>
+creators of the finest
+    quality since 2022
+</pre>
+  </div>
+</div>
 
-<fieldset>
-  <legend>[ past releases ]</legend>
-  <ul type="square">
-    <li>pc-demo: <a href="https://www.pouet.net/prod.php?which=94529">illuminations at atk-lohja 2023</a> (1st)</li>
-  </ul>
-</fieldset>
-
-<font size=7><b>
-<marquee direction="left"><marquee direction="up" scrollamount=20>
-<pre>
-█▀▀ █▀█ █ █▀ █▀█
-█▄▄ █▀▄ ▄ ▄█ █▀▀
-<pre>
-</marquee></marquee>
-</b></font>
+<div id="playa">
+<pre id="player">
+</pre>
+</div>
 
 <fieldset>
   <legend>[ upcoming releases ]</legend>
   <ul type="square">
-    <li>pc-demo at assembly 2023</li>
-    <li>1k intro at assembly 2023</li>
-    <li>wild at assembly 2023</li>
-    <li>pc-demo at atk-lohja 2024</li>
+    <li>ai graphics at <a href="http://www.atk-lohja.fi">atk-lohja 2024</a></li>
+    <li>pc-demo at <a href="http://www.atk-lohja.fi">atk-lohja 2024</a></li>
+    <li>pc-demo at <a href="http://www.assembly.org">assembly summer 2024</a></li>
   </ul>
 </fieldset>
 
-<font size=7><b>
-<marquee direction="right"><marquee direction="down" scrollamount=20>
-<pre>
-█▀▀ █▀█ █ █▀ █▀█
-█▄▄ █▀▄ ▄ ▄█ █▀▀
-<pre>
-</marquee></marquee>
-</b></font>
+
+<fieldset>
+  <legend>[ past releases ]</legend>
+  <ul type="square">
+    <li>ai gfx: <a href="https://files.scene.org/view/parties/2024/assembly_winter24/ai-graphics/early-ai-experiments_by_ezrock-dipe-crsp.zip">early ai experiments</a> at assembly winter 2024 (2nd)</li>
+
+    <li>pc-demo: <a href="https://www.pouet.net/prod.php?which=94803">nasty bug at assembly 2023</a> (12th)</li>
+    <li>ai gfx: <a href="https://files.scene.org/view/parties/2023/assembly_summer23/ai-graphics/assembly-moon-2043_by_dipe.zip">assembly moon 2043</a> at assembly 2023 (3rd)</li>
+    <li>wild demo: <a href="https://www.pouet.net/prod.php?which=94804">plur</a> at assembly 2023 (4th)</li>
+    <li>pc-demo: <a href="https://www.pouet.net/prod.php?which=94529">illuminations</a> at atk-lohja 2023 (1st)</li>
+  </ul>
+</fieldset>
 
 <fieldset>
   <legend>[ members ]</legend>
   <ul type="square">
-    <li>koshermoney (hangaround)</li>
-    <li>salle (music/cables.gl)</li>
+    <li>ezrock (ai)</li>
+    <li>visual meri (graphics)</li>
     <li>glure (hardstyle code)</li>
+    <li>salle (music/cables.gl)</li>
+    <li>koshermoney (hangaround)</li>
     <li>dipe (code/keynote/cables.gl/org)</li>
   </ul>
 </fieldset>
 
+<br>
+<b>no css, no js:</b>
+<br>
 <font size=7><b>
 <marquee direction="left"><marquee direction="up" scrollamount=20>
 <pre>
@@ -65,3 +110,93 @@
 <pre>
 </marquee></marquee>
 </b></font>
+
+<script>
+var element = document.querySelector('pre#player');
+AsciiMorph(element, {x: 25,y: 10});
+
+var boy = [
+"",
+"",
+"",
+"",
+"HI !",
+"",
+"",
+"         ,-.",
+"        ,'  |",
+"    ___,'    \\",
+"  ,' ________ `.",
+" /              \\",
+"/                \\",
+"|     _______    |",
+"|,-'\"\"       \"\"`-,|",
+"\\_\\             /_/",
+"   `'-.._____..-'`",
+"      /       \\",
+"     / /     \\ \\",
+"    `' `\\   /`'`",
+"        `\\\"`\\\"`",
+]
+
+var bird = [
+ "                                        /",
+ "                                       /",
+ "                                      /;",
+ "                                     //",
+ "                                    ;/",
+ "                                  ,//",
+ "   we are                     _,-' ;_,,",
+ "                           _,'-_  ;|,'",
+ "                       _,-'_,..--. |",
+ "               ___   .'-'_)'  ) _)\\|      ___",
+ "             ,'\"\"\"`'' _  )   ) _)  ''--'''_,-'",
+ "           -={-o-  /|    )  _)  ) ; '_,--''",
+ "             \\ -' ,`.  ) .)  _)_,''|",
+ "              `.\"(   `------''     /",
+ "                `.\\             _,'",
+ "                  `-.____....-\\\\",
+ "                            || \\\\",
+ "                            // ||",
+ "                           //  ||",
+ "                       _-.//_ _||_,",
+ "                         ,'  ,-'/"
+ ]
+
+var mona = [
+"",
+"",
+"",
+"",
+ "                            ____",
+ "                           o8%8888,",
+ "                         o88%8888888.",
+ "    cr!sp               8'-    -:8888b",
+ "                       8'         8888",
+ "                      d8.-=. ,==-.:888b",
+ "                      >8 `~` :`~' d8888",
+ "                      88         ,88888",
+ "                      88b. `-~  ':88888",
+ "                      888b ~==~ .:88888",
+ "                      88888o--:':::8888",
+ "                      `88888| :::' 8888b",
+ "                      8888^^'       8888b",
+ "                     d888           ,%888b.",
+ "                    d88%            %%%8--'-.",
+ "                   /88:.__ ,       _%-' ---  -",
+ "                       '''::===..-'   =  --.  `",
+ ]
+
+let asciis = [boy, mona, bird]
+
+setTimeout(() => {
+  AsciiMorph.morph(asciis[0]);
+
+  const morpher = setInterval(() => {
+    asciis.unshift(asciis.pop());
+    AsciiMorph.morph(asciis[0]);
+  }, 2000);
+}, 800);
+
+
+</script>
